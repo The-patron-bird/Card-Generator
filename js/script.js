@@ -94,10 +94,19 @@ form.addEventListener("submit", (det) => {
     // =========================
     // PROFILE IMAGE
     // =========================
+    const imageURL = inputs[2].value.trim();
 
-    pic.crossOrigin = "anonymous";
+    if (!imageURL) {
+        console.error("No profile image URL provided.");
+    } else {
+        // Route remote images through a CORS-friendly image proxy.
+        const proxyURL =
+            "https://images.weserv.nl/?url=" +
+            encodeURIComponent(imageURL);
 
-    pic.src = inputs[2].value;
+        pic.crossOrigin = "anonymous";
+        pic.src = proxyURL;
+    }
 
 
     // =========================
@@ -297,36 +306,29 @@ form.addEventListener("submit", (det) => {
     // =========================
     // IMAGE LOADING HANDLER
     // =========================
-
-    if (pic.complete) {
-
-        // Image already loaded
-
+    pic.onload = () => {
+        console.log("Profile image loaded successfully.");
         generateCardImage();
+    };
 
-    } else {
+    pic.onerror = () => {
+        console.error(
+            "Profile image could not be loaded:",
+            inputs[2].value
+        );
 
-        // Wait until image finishes loading
+        const countElement =
+            document.querySelector("#download-count");
 
-        pic.onload = () => {
-
-            generateCardImage();
-
-        };
-
-        pic.onerror = () => {
-
-            console.error(
-                "Profile image could not be loaded."
+        const statusText =
+            document.querySelector(
+                "#download-status span:last-child"
             );
 
-            // Still generate the card without
-            // waiting forever for the image
-
-            generateCardImage();
-
-        };
-
-    }
+        countElement.textContent = "!";
+        statusText.textContent =
+            "Could not load this image.";
+    };
 
 });
+
