@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Instrument+Serif:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Quicksand:wght@300..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Rubik+Spray+Paint&display=swap');
+
+@font-face {
+    font-family: "brigold";
+    src: url("../assets/fonts/brigold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "sign";
+    src: url("../assets/fonts/sign.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "chalk";
+    src: url("../assets/fonts/CB.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "milker";
+    src: url("../assets/fonts/Milker.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito";
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #fff;
+    overflow: hidden;
+}
+
+/* =========================
+           FORM SCREEN
+           ========================= */
+
+#main {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+form {
+    width: 390px;
+    min-height: 540px;
+    padding: 48px 42px 36px;
+    background: #040404;
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title {
+    font-family: "Nunito";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #f4f4f4;
+    margin-bottom: 13px;
+}
+
+.form-subtitle {
+    font-family: "Nunito";
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #777;
+    max-width: 260px;
+    margin-bottom: 34px;
+}
+
+.field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: block;
+    font-family: "Nunito";
+    font-size: 9px;
+    font-weight: 500;
+    color: #d1d1d1;
+    margin-bottom: 7px;
+}
+
+.field input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 0 11px;
+    border: 1px solid #111114;
+    outline: none;
+    border-radius: 5px;
+    background: #111113;
+    color: #d9d9d9;
+    font-family: "Nunito";
+    font-size: 9px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input::placeholder {
+    color: #4d4d50;
+    opacity: 1;
+}
+
+.field input:focus {
+    border-color: #929b76;
+    box-shadow: 0 0 0 2px rgba(146, 155, 118, 0.2);
+}
+
+.profile-field {
+    margin-bottom: 11px;
+}
+
+.hint {
+    font-family: "Nunito";
+    font-size: 7.5px;
+    line-height: 1.5;
+    color: #56565a;
+    margin-top: 7px;
+}
+
+.generate {
+    width: 100%;
+    height: 35px;
+    margin-top: 29px;
+    border: 0;
+    border-radius: 5px;
+    background: #a9b58b;
+    color: #050505;
+    font-family: "Nunito";
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.generate:hover {
+    opacity: 0.92;
+}
+
+.generate:active {
+    transform: scale(0.99);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 28px;
+    font-family: "Nunito";
+    font-size: 8px;
+    color: #555559;
+}
+
+.form-footer span {
+    color: #858589;
+}
+
+.terms {
+    text-align: center;
+    margin-top: 43px;
+    font-family: "Nunito";
+    font-size: 7px;
+    line-height: 1.5;
+    color: #4b4b4e;
+}
+
+/* =========================
+           CARD SCREEN
+           Everything below this
+           keeps the original card
+           design exactly as supplied.
+           ========================= */
+
+#main2 {
+    display: none;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    padding: 20px;
+    width: 50%;
+    height: 70%;
+    background-color: #ff4065;
+    border-radius: 20px;
+    justify-self: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+
+#star {
+    transform: scale(2);
+    transform: rotate(90deg);
+    position: absolute;
+    margin-left: 195px;
+    z-index: 2;
+}
+
+h2 {
+    position: absolute;
+    font-family: "brigold";
+    z-index: 5;
+    font-size: 70px;
+    right: 45px;
+    top: 10px;
+    color: #ffffc0;
+}
+
+#photo {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    top: 30px;
+    left: 30px;
+    z-index: 7;
+    position: absolute;
+    background-color: #222;
+    overflow: hidden;
+}
+
+#photo #pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#name {
+    position: absolute;
+    font-family: "sign";
+    z-index: 5;
+    font-size: 40px;
+    right: 30px;
+    bottom: 20px;
+    color: #000;
+}
+
+#w2 {
+    margin-top: 10px;
+    line-height: 50px;
+    font-size: 40px;
+    position: absolute;
+    text-align: right;
+    z-index: 5;
+    top: 130px;
+    right: 47px;
+    font-family: "chalk";
+    color: #fff;
+}
+
+.star {
+    position: absolute;
+    width: 60px;
+    z-index: 8;
+    top: 146px;
+    left: 146px;
+    aspect-ratio: 1;
+    background: #fff;
+    clip-path: polygon(50% 0,
+            calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+            calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))));
+}
+
+#n1 {
+    font-size: 70px;
+    font-family: "milker";
+    position: absolute;
+    color: #fdaf27;
+    left: 30px;
+    top: 250px;
+    z-index: 9;
+}
+
+#n2 {
+    font-size: 70px;
+    font-family: "milker";
+    position: absolute;
+    color: #fdaf27;
+    left: 30px;
+    top: 190px;
+    z-index: 9;
+}
+
+/* Smooth page transition */
+
+#main {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#main.form-exit {
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+}
+
+#main2 {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#main2.card-enter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+DOWNLOAD COUNTDOWN=========================*/
+#download-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #222;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+#main2.card-enter #download-status {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#download-count {
+    min-width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+}

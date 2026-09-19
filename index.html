@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Generator</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div id="main">
+
+        <form id="cardForm">
+            <div class="form-title">Create your card</div>
+
+            <div class="form-subtitle">
+                Build a digital card with your identity and create your own visual footprint.
+            </div>
+
+            <div class="field">
+                <label for="name">Full name *</label>
+                <input id="nameInput" type="text" placeholder="Andrew" required>
+            </div>
+
+            <div class="field">
+                <label for="title">Title *</label>
+                <input id="titleInput" type="text" placeholder="e.g. Thomas" required>
+            </div>
+
+            <div class="field profile-field">
+                <label for="profile">Profile picture *</label>
+                <input id="profileInput" type="text" placeholder="e.g. ./profile.jpg" required>
+                <div class="hint">Use the path or URL of the image you want to display on your card.</div>
+            </div>
+
+            <button class="generate" type="submit">Generate card</button>
+
+            <div class="terms">
+                After creating the card, your card will be automatically downloaded.
+            </div>
+        </form>
+
+    </div>
+
+    <div id="main2">
+        <div id="download-status">
+            <span id="download-count">10</span>
+            <span>Preparing your card...</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+# ================================
+# Dependencies
+# ================================
+
+node_modules/
+
+
+# ================================
+# Environment & Secrets
+# ================================
+
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+
+# ================================
+# Logs
+# ================================
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ================================
+# Operating System Files
+# ================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# ================================
+# Editor / IDE Files
+# ================================
+
+.vscode/
+.idea/
+
+
+# ================================
+# Build / Generated Files
+# ================================
+
+dist/
+build/
+out/
+
+
+# ================================
+# Temporary Files
+# ================================
+
+*.tmp
+*.temp
+*.bak
+
+
+# ================================
+# Third-Party Fonts
+# ================================
+
+assets/fonts/*.otf
